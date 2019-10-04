@@ -44,13 +44,9 @@ class Dashboard extends React.Component {
 
   handleFoul = (event) => {
     event.preventDefault();
-    if (this.state.strikes === 0) {
+    if (this.state.strikes < 2) {
       this.setState({
-        strikes: 1
-      })
-    } else if (this.state.strikes === 1) {
-      this.setState({
-        strikes: 2
+        strikes: this.state.strikes + 1
       })
     }
   }
